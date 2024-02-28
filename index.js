@@ -8,13 +8,14 @@ var allPieces = ["desert"
 
 var allProbs = [2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12];
 
-var allShips = ["31", "31", "31", "31", "wheat", "ore", "wood", "brick", "sheep"];
+var allPorts = ["31", "31", "31", "31", "wheat", "ore", "wood", "brick", "sheep"];
 
-$("button").on("click", function () { 
+$("#generate").on("click", function () { 
+    removeAll();
     addAllTiles();
 
-
  });
+
 
  function shuffle(array) {
     let currentIndex = array.length,  randomIndex;
@@ -34,10 +35,14 @@ $("button").on("click", function () {
     return array;
   }
 
+function addPorts() {
+    shuffle(allPorts);
+}
+
+
 function addAllTiles() {
     shuffle(allPieces);
     shuffle(allProbs);
-    console.log(allProbs);
 
     var tokenCount = 0;
 
@@ -81,4 +86,8 @@ function addTile(num, image) {
     document.body.appendChild(tile);
 }
 
-
+function removeAll() {
+    $("img").remove(".tile_upper");
+    $("img").remove(".tile");
+    $("img").remove(".token");
+}

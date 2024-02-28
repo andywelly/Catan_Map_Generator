@@ -39,6 +39,13 @@ h1 {
     z-index: 1;
 }
 
+.port {
+    max-width: 40px;
+    height: auto;
+    position: absolute;
+    z-index: 2;
+}
+
 .tile_0{
     top: 264px;
     left: 534px;
@@ -114,4 +121,9 @@ h1 {
 .tile_18{
     top: 781px;
     left: 829px;
+}
+
+.port_1 {
+    top: 100px;
+    left: 100px;
 }
