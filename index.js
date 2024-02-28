@@ -11,7 +11,6 @@ var allProbs = [2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12];
 var allShips = ["31", "31", "31", "31", "wheat", "ore", "wood", "brick", "sheep"];
 
 $("button").on("click", function () { 
-    alert("Generating");
     addAllTiles();
 
 
@@ -38,35 +37,48 @@ $("button").on("click", function () {
 function addAllTiles() {
     shuffle(allPieces);
     shuffle(allProbs);
+    console.log(allProbs);
+
+    var tokenCount = 0;
 
     for (var i = 0; i < allPieces.length; i ++) {
         if (allPieces[i] != "desert") {
             addTile(i, allPieces[i]);
+            addToken(i, allProbs[tokenCount]);
+            tokenCount++;
         } else {
             addTile(i, allPieces[i]);
         }
     }
+
 }
 
 
-function addProbs(num) {
-    
+function addToken(position, num) {
+    var probToken = document.createElement("img")
+    var imageSrc = "assets/tokens/" + num + ".png"
+    probToken.src = imageSrc;
+    var position = "tile_" + position;
+    probToken.classList.add(position);
+    probToken.classList.add("token");
+    document.body.appendChild(probToken);
 }
 
 
-function addTile(num, image) {
-    var img = document.createElement("img");
+function addTile(num, image) {    
+    var tile = document.createElement("img");
     var imageSrc = "assets/tiles/" + image + ".png"
-    img.src = imageSrc;
+    tile.src = imageSrc;
     var position = "tile_" + num;
-    img.classList.add(position);
+    tile.classList.add(position);
 
     if (num < 7) {
-        img.classList.add("tile_upper");
+        tile.classList.add("tile_upper");
     } else {
-        img.classList.add("tile");
+        tile.classList.add("tile");
     }
 
-    document.body.appendChild(img);
+    document.body.appendChild(tile);
 }
+
 
