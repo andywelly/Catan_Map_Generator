@@ -35,8 +35,20 @@ $("#generate").on("click", function () {
     return array;
   }
 
-function addPorts() {
+function addAllPorts() {
     shuffle(allPorts);
+
+}
+
+function addPort(position, portType) {
+    var port = document.createElement("img");
+    var imageSrc = "assets/ports/" + portType + ".png"
+    console.log(imageSrc);
+    port.src = imageSrc;
+    var position = "port_" + position;
+    port.classList.add(position);
+    port.classList.add("port");
+    document.body.appendChild(port);
 }
 
 

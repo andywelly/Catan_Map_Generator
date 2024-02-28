@@ -40,7 +40,7 @@ h1 {
 }
 
 .port {
-    max-width: 40px;
+    max-width: 50px;
     height: auto;
     position: absolute;
     z-index: 2;
