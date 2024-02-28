@@ -13,7 +13,7 @@ var allPorts = ["31", "31", "31", "31", "wheat", "ore", "wood", "brick", "sheep"
 $("#generate").on("click", function () { 
     removeAll();
     addAllTiles();
-
+    addAllPorts();
  });
 
 
@@ -37,6 +37,9 @@ $("#generate").on("click", function () {
 
 function addAllPorts() {
     shuffle(allPorts);
+    for (var i = 0; i < allPorts.length; i++) {
+        addPort(i, allPorts[i]);
+    }
 
 }
 

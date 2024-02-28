@@ -3,6 +3,7 @@ body {
     background-color: lightblue;
 }
 
+
 .border > img {
     position: absolute;
     left: 232px;
@@ -27,6 +28,8 @@ h1 {
     z-index: 2;
 }
 
+/* Need two slightly differently sized tiles due to images being slightly distorted*/
+
 .tile{
     max-width: 146.5px;
     height: auto;
@@ -45,8 +48,10 @@ h1 {
     max-width: 50px;
     height: auto;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
 }
+
+/* Position for all 19 tiles, done manually as images do not align properly */
 
 .tile_0{
     top: 264px;
@@ -125,7 +130,41 @@ h1 {
     left: 829px;
 }
 
+/* Position for all the ports */
+
 .port_1 {
     top: 100px;
     left: 100px;
+}
+.port_2 {
+    top: 200px;
+    left: 200px;
+}
+.port_3 {
+    top: 300px;
+    left: 300px;
+}
+.port_4 {
+    top: 400px;
+    left: 400px;
+}
+.port_5 {
+    top: 400px;
+    left: 400px;
+}
+.port_6 {
+    top: 600px;
+    left: 600px;
+}
+.port_7 {
+    top: 700px;
+    left: 700px;
+}
+.port_8 {
+    top: 800px;
+    left: 800px;
+}
+.port_9 {
+    top: 900px;
+    left: 900px;
 }
