@@ -4,7 +4,9 @@ body {
 }
 
 .border > img {
-    position: relative;
+    position: absolute;
+    left: 232px;
+    top: 143.5px;
     max-width: 1000px;
     height: auto;
     padding: 25px;
