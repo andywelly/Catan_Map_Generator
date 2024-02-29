@@ -39,6 +39,7 @@ function addAllPorts() {
     shuffle(allPorts);
     for (var i = 0; i < allPorts.length; i++) {
         addPort(i, allPorts[i]);
+        console.log(i + " and " + allPorts[i]);
     }
 
 }
@@ -51,7 +52,8 @@ function addPort(position, portType) {
     var position = "port_" + position;
     port.classList.add(position);
     port.classList.add("port");
-    document.body.appendChild(port);
+    const container = document.getElementById("container")
+    container.appendChild(port);
 }
 
 
@@ -81,7 +83,8 @@ function addToken(position, num) {
     var position = "tile_" + position;
     probToken.classList.add(position);
     probToken.classList.add("token");
-    document.body.appendChild(probToken);
+    const container = document.getElementById("container")
+    container.appendChild(probToken);
 }
 
 
@@ -97,8 +100,8 @@ function addTile(num, image) {
     } else {
         tile.classList.add("tile");
     }
-
-    document.body.appendChild(tile);
+    const container = document.getElementById("container")
+    container.appendChild(tile);
 }
 
 function removeAll() {
