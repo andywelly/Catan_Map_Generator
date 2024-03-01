@@ -1,14 +1,30 @@
 body {
     text-align: center;
     background-color: lightblue;
+    justify-content: center;
+    align-items: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#generate {
+    font-size: 2rem;
+    
+}
+
+img {
+    border: 5px solid green;
+}
+
+#children img {
+    position: absolute;
+}
 
 #border {
-    position: absolute;
-    left: 232px;
-    top: 143.5px;
+    position: relative;
+    top: 0px;
+    left: 0px;
     max-width: 1000px;
+    align-items: center;
     height: auto;
     padding: 25px;
     z-index: 0;
@@ -16,38 +32,38 @@ body {
 
 h1 {
     font-size: 3rem;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color:rgb(105, 48, 10);
 }
 
 .token {
+    position: absolute;
     max-width: 60px;
     height: auto;
-    position: absolute;
     transform: translate(42px, 52px);
     z-index: 2;
+
 }
 
 /* Need two slightly differently sized tiles due to images being slightly distorted*/
 
-.tile{
+.tile {
+    position: absolute;
     max-width: 146.5px;
     height: auto;
-    position: absolute;
     z-index: 1;
 }
 
 .tile_upper {
+    position: absolute;
     max-width: 148px;
     height: auto;
-    position: absolute;
     z-index: 1;
 }
 
 .port {
+    position: absolute;
     max-width: 50px;
     height: auto;
-    position: absolute;
     z-index: 3;
 }
 
@@ -55,7 +71,7 @@ h1 {
 
 .tile_0{
     top: 264px;
-    left: 534px;
+    left: 536px;
 }
 .tile_1{
     top: 264px;

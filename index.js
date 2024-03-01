@@ -39,7 +39,6 @@ function addAllPorts() {
     shuffle(allPorts);
     for (var i = 0; i < allPorts.length; i++) {
         addPort(i, allPorts[i]);
-        console.log(i + " and " + allPorts[i]);
     }
 
 }
@@ -47,12 +46,11 @@ function addAllPorts() {
 function addPort(position, portType) {
     var port = document.createElement("img");
     var imageSrc = "assets/ports/" + portType + ".png"
-    console.log(imageSrc);
     port.src = imageSrc;
     var position = "port_" + position;
     port.classList.add(position);
     port.classList.add("port");
-    const container = document.getElementById("container")
+    const container = document.getElementById("children")
     container.appendChild(port);
 }
 
@@ -83,7 +81,7 @@ function addToken(position, num) {
     var position = "tile_" + position;
     probToken.classList.add(position);
     probToken.classList.add("token");
-    const container = document.getElementById("container")
+    const container = document.getElementById("children")
     container.appendChild(probToken);
 }
 
@@ -100,7 +98,7 @@ function addTile(num, image) {
     } else {
         tile.classList.add("tile");
     }
-    const container = document.getElementById("container")
+    const container = document.getElementById("children")
     container.appendChild(tile);
 }
 
@@ -108,4 +106,5 @@ function removeAll() {
     $("img").remove(".tile_upper");
     $("img").remove(".tile");
     $("img").remove(".token");
+    $("img").remove(".port")
 }
