@@ -1,65 +1,66 @@
 body {
-    text-align: center;
+    text-align: center; /* Center the entire content of the body */
     background-color: lightblue;
-    justify-content: center;
-    align-items: center;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-
-#generate {
-    font-size: 2rem;
-    
-}
-
-#children img {
-    position: absolute;
+#parent {  /* The container for the border and all game elements */
+    position: relative; /* Needed for absolute positioning of children */
+    width: 1000px; /* Set a fixed width for the game board */
+    height: auto; /* Height should adjust automatically */
+    margin: 0 auto; /* Center the parent horizontally */
 }
 
 #border {
-    position: relative;
-    top: -20px;
-    left: 2px;
-    max-width: 1000px;
-    align-items: center;
-    height: auto;
-    padding: 25px;
+    position: relative; /* Keep relative positioning for the border */
+    top: 0;           /* Reset top and left */
+    left: 0;
+    width: 100%;       /* Border takes full width of the parent */
+    height: auto;      /* Maintain aspect ratio */
     z-index: 0;
+}
+
+#children {
+    position: absolute; /* Essential for overlaying tiles, tokens, and ports */
+    top: 0;
+    left: 0;
+    width: 100%;       /* Children take the full width of the parent */
+    height: 100%;      /* Children take the full height of the parent */
+    z-index: 1; /* Ensure children are above the border */
+}
+
+#children img {
+    position: absolute; /* All children are absolutely positioned */
 }
 
 h1 {
     font-size: 3rem;
-    color:rgb(105, 48, 10);
+    color: rgb(105, 48, 10);
+    text-align: center;
+}
+
+#generate {
+    font-size: 2rem;
+    margin-bottom: 20px; /* Add some space below the button */
+    display: block; /* Make the button a block element so it centers properly */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .token {
-    position: absolute;
     max-width: 60px;
     height: auto;
-    transform: translate(42px, 52px);
     z-index: 2;
-
+    transform: translate(40px, 45px);
 }
 
-/* Need two slightly differently sized tiles due to images being slightly distorted*/
-
-.tile {
-    position: relative;
-    max-width: 146.5px;
-    height: auto;
-    z-index: 1;
-}
-
-.tile_upper {
-    position: absolute;
-    max-width: 148px;
+.tile, .tile_upper {
+    max-width: 146.5px; /* Or 148px, whichever looks better */
     height: auto;
     z-index: 1;
 }
 
 .port {
-    position: absolute;
     max-width: 50px;
     height: auto;
     z-index: 3;
@@ -67,126 +68,126 @@ h1 {
 
 /* Position for all 19 tiles, done manually as images do not align properly */
 
-.tile_0{
-    top: 264px;
-    left: 536px;
+.tile_0 {
+    top: 96px;
+    left: 279px;
 }
 .tile_1{
-    top: 264px;
-    left: 684px;
+    top: 94px;
+    left: 427px;
 }
 .tile_2{
-    top: 264px;
-    left: 832px;
+    top: 93px;
+    left: 577px;
 }
 .tile_3{
-    top: 395px;
-    left: 460.5px;
+    top: 225px;
+    left: 203px;
 }
 .tile_4{
-    top: 395px;
-    left: 608.5px;
+    top: 223px;
+    left: 350px;
 }
 .tile_5{
-    top: 395px;
-    left: 756.5px;
+    top: 225px;
+    left: 499px;
 }
 .tile_6{
-    top: 394px;
-    left: 907px;
+    top: 225px;
+    left: 649px;
 }
 .tile_7{
-    top: 523px;
-    left: 385px;
+    top: 353px;
+    left: 130px;
 }
 .tile_8{
-    top: 525px;
-    left: 534px;
+    top: 354px;
+    left: 277px;
 }
 .tile_9{
-    top: 525px;
-    left: 683px;
+    top: 354px;
+    left: 425px;
 }
 .tile_10{
-    top: 525px;
-    left: 832px;
+    top: 354px;
+    left: 574px;
 }
 .tile_11{
-    top: 524px;
-    left: 981px;
+    top: 352px;
+    left: 724px;
 }
 .tile_12{
-    top: 652px;
-    left: 456.5px;
+    top: 484px;
+    left: 202px;
 }
 .tile_13{
-    top: 653px;
-    left: 607px;
+    top: 484px;
+    left: 351px;
 }
 .tile_14{
-    top: 654px;
-    left: 755px;
+    top: 482px;
+    left: 500px;
 }
 .tile_15{
-    top: 652px;
-    left: 904px;
+    top: 481px;
+    left: 648px;
 }
 .tile_16{
-    top: 781px;
-    left: 530px;
+    top: 613px;
+    left: 274px;
 }
 .tile_17{
-    top: 781px;
-    left: 679px;
+    top: 613px;
+    left: 423px;
 }
 .tile_18{
-    top: 781px;
-    left: 829px;
+    top: 612px;
+    left: 572px;
 }
 
 /* Position for all the ports */
 
 .port_0 {
-    top: 210px;
-    left: 525px;
+    top: 43px;
+    left: 265px;
     transform: rotate(180deg);
 }
 .port_1 {
-    top: 200px;
-    left: 790px;
+    top: 38px;
+    left: 530px;
     transform: rotate(180deg);
 }
 .port_2 {
-    top: 335px;
-    left: 1025px;
+    top: 170px;
+    left: 765px;
     transform: rotate(225deg);
 }
 .port_3 {
-    top: 587px;
-    left: 1160px;
+    top: 419px;
+    left: 898px;
     transform: rotate(270deg);
 }
 .port_4 {
-    top: 818px;
-    left: 1030px;
+    top: 650px;
+    left: 770px;
     transform: rotate(315deg);
 }
 .port_5 {
-    top: 950px;
-    left: 790px;
+    top: 783px;
+    left: 535px;
 }
 .port_6 {
-    top: 950px;
-    left: 510px;
+    top: 778px;
+    left: 253px;
     transform: rotate(45deg);
 }
 .port_7 {
-    top: 710px;
-    left: 370px;
+    top: 540px;
+    left: 110px;
     transform: rotate(90deg);
 }
 .port_8 {
-    top: 440px;
-    left: 380px;
+    top: 268px;
+    left: 130px;
     transform: rotate(135deg);
 }
